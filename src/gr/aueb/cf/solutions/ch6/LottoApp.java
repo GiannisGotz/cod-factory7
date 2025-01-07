@@ -20,11 +20,18 @@ public class LottoApp {
             int num;
             int window;
 
+            // Read input numbers from file
             while ((num = in.nextInt()) != -1 && pivot <= 48) {
                 inputNumbers[pivot++] = num;
-                //pivot++;
             }
 
+            // Prints error message for not valid count requirements
+            if (pivot < 7 || pivot > 49) {
+                System.err.println("The file must contain between 7 and 49 numbers.");
+                return;
+            }
+
+            // Sort the input numbers
             int[] numbers = Arrays.copyOfRange(inputNumbers, 0, pivot);
             Arrays.sort(numbers);
 
@@ -42,7 +49,7 @@ public class LottoApp {
                                     result[4] = numbers[m];
                                     result[5] = numbers[n];
 
-                                    if (!isEvenGE(result, 5) && !isOddGE(result, 5) && !sameTen(result, 3)
+                                    if (!isEvenGE(result, 4) && !isOddGE(result, 4) && !sameTen(result, 3)
                                             && !sameEnding(result, 3) && !consecutive(result)) {
                                         ps.printf("%d %d %d %d %d %d\n",
                                                 result[0], result[1], result[2], result[3], result[4], result[5]);
