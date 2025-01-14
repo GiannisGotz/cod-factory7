@@ -1,9 +1,9 @@
 package gr.aueb.cf.ch13;
 
 /**
- * Defines a {@link Account} class.
+ * Defines an {@link Account} class.
  *
- * @author Giannis
+ * @author a8ana
  * @version 0.1
  * @since 0.1
  */
@@ -83,71 +83,72 @@ public class Account {
     /**
      * Deposits a certain amount of money.
      *
-     * @param amount       the amount of money to be deposited.
-     * @throws Exception   if the amount is negative.
+     * @param amount        the amount of money to be deposited.
+     * @throws Exception    if the amount is negative.
      */
     public void deposit(double amount) throws Exception {
         try {
-            if ( amount < 0 ) {
+            if (amount < 0) {
                 throw new Exception("The amount must not be negative.");
             }
             balance += amount;
-            System.out.println("Amount: " + amount + " successfully deposited."); // logging
+            System.out.println("Amount " + amount + " successfully deposited.");    // logging
         } catch (Exception e) {
-            System.err.println("Error.Amount " + amount + " can not be negative.");
-            //stin fash tou development e.printStackTrace();
+            System.err.println("Error. Amount " + amount + " can not be negative");
+            // e.printStackTrace();
             throw e;
         }
     }
 
     /**
-     * Withdraw an amount of money from the {@link Account}
-     * based on a valid ssn checked by {@link #isSsnValid(String)}
+     * Withdraws an amount of money from the {@link Account}
+     * based on a valid ssn checked by {@link Account#isSsnValid(String)}.
      *
      * @param amount
-     *         the amount to be withdrawn.
+     *          the amount to be withdrawn.
      * @param ssn
-     *         the give ssn.
+     *          the given ssn.
      * @throws Exception
-     *         if the ssn is not valid or the balance is not sufficient or
-     *         the amount is negative
+     *          if the ssn is not valid or the balance is not sufficient or
+     *          the amount is negative.
      */
     public void withdraw(double amount, String ssn) throws Exception {
         try {
-            if ( !isSsnValid(ssn)) {
+            if (!isSsnValid(ssn)) {
                 throw new Exception("Ssn " + ssn + " is not valid.");
             }
 
-            if ( amount > balance ) {
-                throw new Exception("Insufficient balance : " + balance  + " for amount " + amount);
+            if (amount > balance) {
+                throw new Exception("Insufficient balance " + balance + " for amount " + amount);
             }
 
-            if ( amount < 0) {
-                throw new Exception("The amount must not be negative.");
+            if (amount < 0) {
+                throw new Exception("The amount " + amount + " must not be negative.");
             }
 
             balance -= amount;
-            System.out.println("Amount: " + amount + " successfully withdrawn."); // logging
+            System.out.println("Amount " + amount + " successfully withdrawn.");    // logging
         } catch (Exception e) {
             System.err.println("Error. " + e.getMessage());
-            //stin fash tou development e.printStackTrace();
+            // e.printStackTrace();
             throw e;
         }
     }
 
     /**
-     * Returns the balance of the {@link Account}
-     * @return the Account's balance
+     * Returns the balance of the {@link Account}.
+     *
+     * @return  the Account's balance.
      */
     public double getAccountBalance() {
-        System.out.println("The account balance was returned."); // logging
+        System.out.println("The account balance was returned");     // logging
         return getBalance();
     }
 
     /**
      * Returns a string representation of the {@link Account} state.
      *
-     * @return the string-based format of  the state of the {@link Account}.
+     * @return  the string-based format of the state of the {@link Account}.
      */
     public String accountToString() {
         return "(" + id + ", " + iban + ", " + firstname + ", " + lastname + ", " + ssn + ", " + balance + ")";
@@ -158,5 +159,4 @@ public class Account {
     private boolean isSsnValid(String ssn) {
         return this.ssn.equals(ssn);
     }
-
 }

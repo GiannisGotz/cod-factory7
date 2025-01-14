@@ -14,6 +14,7 @@ public class Order {
     private String formattedTimestamp;
 
     public Order() {
+
     }
 
     public Order(int id, double amount, String description, String state) {

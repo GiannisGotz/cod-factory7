@@ -1,7 +1,7 @@
 package gr.aueb.cf.ch12.model;
 
 /**
- * P0J0 - Java Bean.
+ * POJO - Java Bean.
  */
 public class Teacher {
     private int id;

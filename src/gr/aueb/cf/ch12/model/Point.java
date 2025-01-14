@@ -1,7 +1,7 @@
 package gr.aueb.cf.ch12.model;
 
 /**
-* Defines a 2-dimension point.
+ * Defines a 2-dimension point.
  */
 public class Point {
     private static int noOfPoints = 0;
@@ -38,4 +38,3 @@ public class Point {
         this.y = y;
     }
 }
-

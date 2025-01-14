@@ -3,19 +3,19 @@ package gr.aueb.cf.ch12.model;
 public class Product {
     private long id;
     private String name;
-    private String descrition;
+    private String description;
     private double price;
     private int quantity;
     private boolean inStock;
 
     public Product() {
+
     }
 
-    public Product(long id, String name, String descrition, double price,
-                   int quantity, boolean inStock) {
+    public Product(long id, String name, String description, double price, int quantity, boolean inStock) {
         this.id = id;
         this.name = name;
-        this.descrition = descrition;
+        this.description = description;
         this.price = price;
         this.quantity = quantity;
         this.inStock = inStock;
@@ -37,12 +37,12 @@ public class Product {
         this.name = name;
     }
 
-    public String getDescrition() {
-        return descrition;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescrition(String descrition) {
-        this.descrition = descrition;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public double getPrice() {

@@ -12,8 +12,7 @@ public class User {
 
     }
 
-    public User(int id, String firstname, String lastname, String username,
-                String password, boolean isActive) {
+    public User(int id, String firstname, String lastname, String username, String password, boolean isActive) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -66,7 +65,7 @@ public class User {
         return isActive;
     }
 
-    public void setActive(boolean active) {
-        this.isActive = active;
+    public void setActive(boolean isActive) {
+        this.isActive = isActive;
     }
 }

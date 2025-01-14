@@ -14,11 +14,11 @@ public class Customer {
     private String zipCode;
 
     public Customer() {
+
     }
 
-    public Customer(int id, String firstname, String lastname, String vatRegistrationNo,
-                    String phoneNo, String region, String prefecture,
-                    String city, String street, String streetNo, String zipCode) {
+    public Customer(int id, String firstname, String lastname, String vatRegistrationNo, String phoneNo,
+                    String region, String prefecture, String city, String street, String streetNo, String zipCode) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -119,5 +119,4 @@ public class Customer {
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
-
 }
